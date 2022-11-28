@@ -8,40 +8,76 @@ require("SMTP.php");
 
 
 
-			$mailTo = "bambarovie_bsit@plmun.edu.ph";
-			$body = "<h1>New Registation!</h1>";
 			
-			$mail = new PHPMailer();
+	// $mailTo = "cervantesangelomaro_bsit@plmun.edu.ph";
+			$body = "<h1>New Registation for Event!</h1>";
+			$mail = new PHPMailer(true);
 			
 		    // $mail->SMTPDebug = 3;
 			
 			$mail->isSMTP();
 			$mail->Mailer = "smtp";
-			$mail->Host = "mail.smtp2go.com";
-			$mail->Port = "2525";
+			$mail->Host = "smtp.gmail.com";
+			$mail->Port = "465";
 			$mail->SMTPAuth = true;
-			$mail->SMTPSecure = 'tls';
-			$mail->Username = "HCIEventManagement";
-			$mail->Password = "EventManagementSystem";
-			$mail->From = "bambarovie@gmail.com";
+			$mail->SMTPSecure = 'ssl';
+			$mail->Username = "hcieventmanagement@gmail.com";
+$mail->Password = "mnguskmczpxmvkyt";
+$mail->setFrom = "Event Managent HCI";
 			$mail->FromName = "Registration!";
-			$mail->addAddress($mailTo, "Admin");
+			$mail->addAddress("hcieventmanagement@gmail.com");
 			
 			$mail->isHTML(true);
 			
 			$mail->Subject = "New Registration for Event!";
 			$mail->Body = $body;
 			$mail->AltBody = "This is the plain text version of the mail content";
-			
-			 if(!$mail->send()){ 
+			$mail->send();
+			//  if(!$mail->send()){ 
 			   
-			 }
-			 else{
+			//  }
+			//  else{
 			
 			   
 			
 			
-			 } 
+			//  } 
+
+
+						// $mailTo = "cervantesangelomaro_bsit@plmun.edu.ph";
+			// $body = "<h1>New Registation for Audience!</h1>";
+
+			// $mail = new PHPMailer();
+			
+		    // // $mail->SMTPDebug = 3;
+			
+			// $mail->isSMTP();
+			// $mail->Mailer = "smtp";
+			// $mail->Host = "mail.smtp2go.com";
+			// $mail->Port = "2525";
+			// $mail->SMTPAuth = true;
+			// $mail->SMTPSecure = 'tls';
+			// $mail->Username = "HCIEventManagement";
+			// $mail->Password = "EventManagementSystem";
+			// $mail->From = "bambarovie@gmail.com";
+			// $mail->FromName = "Registration!";
+			// $mail->addAddress($mailTo, "Admin");
+			
+			// $mail->isHTML(true);
+			
+			// $mail->Subject = "New Registration for Event!";
+			// $mail->Body = $body;
+			// $mail->AltBody = "This is the plain text version of the mail content";
+			
+			//  if(!$mail->send()){ 
+			   
+			//  }
+			//  else{
+			
+			   
+			
+			
+			//  } 
 ?>
 
 
